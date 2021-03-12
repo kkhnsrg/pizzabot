@@ -17,22 +17,24 @@ class PizzabotRouteBuilderTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        super.tearDown()
+        routeBuilder = nil
     }
 
     func testPositiveChallengeRouteBuilding() throws {
-        let actualResult = routeBuilder.buildPath(destinationPoints: PizzabotTestsDataSource.ChallengeData.destinationPoints)
-        
+        let actualResult = routeBuilder.buildPath(destinationPoints:
+                                                    PizzabotTestsDataSource.ChallengeData.destinationPoints)
+
         let expectedOutput = PizzabotTestsDataSource.ChallengeData.outputString
-        
+
         XCTAssertEqual(actualResult, expectedOutput)
     }
-    
+
     func testPositiveExampleRouteBuilding() throws {
-        let actualResult = routeBuilder.buildPath(destinationPoints: PizzabotTestsDataSource.ExampleData.destinationPoints)
-        
+        let actualResult = routeBuilder.buildPath(destinationPoints:
+                                                    PizzabotTestsDataSource.ExampleData.destinationPoints)
+
         let expectedOutput = PizzabotTestsDataSource.ExampleData.outputString
-        
+
         XCTAssertEqual(actualResult, expectedOutput)
     }
 

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Parser {
-    
+
     /// Input string parsing into upper right grid point and destination points array
     /// - Parameter inputString: entered string
     func parse(inputString: String) -> (gridSizePoint: Point, destinationPoints: [Point])

@@ -8,15 +8,13 @@
 import Foundation
 
 struct XYRouteBuilder: RouteBuilder {
-    
+
     var startPoint: Point {
-        get {
-            return Point(x: 0, y: 0)
-        }
+        Point(x: 0, y: 0)
     }
-    
+
     func buildPath(destinationPoints: [Point]) -> String {
-        
+
         let points = [startPoint] + destinationPoints
 
         let lines = stride(from: 0, to: points.count - 1, by: 1).map {
@@ -29,8 +27,14 @@ struct XYRouteBuilder: RouteBuilder {
                 let xDifference = pair.endPoint.x - pair.startPoint.x
                 let yDiffference = pair.endPoint.y - pair.startPoint.y
 
-                let horizontalPath = Array.init(repeating: xDifference > 0 ? BotCommand.moveEast : BotCommand.moveWest, count: abs(xDifference))
-                let verticalPath = Array.init(repeating: yDiffference > 0 ? BotCommand.moveNorth : BotCommand.moveSouth, count: abs(yDiffference))
+                let horizontalPath = Array(repeating: xDifference > 0
+                                                        ? BotCommand.moveEast
+                                                        : BotCommand.moveWest,
+                                                count: abs(xDifference))
+                let verticalPath = Array(repeating: yDiffference > 0
+                                                    ? BotCommand.moveNorth
+                                                    : BotCommand.moveSouth,
+                                              count: abs(yDiffference))
 
                 return [horizontalPath, verticalPath, [BotCommand.dropPizza]].reduce([], +)
             }

@@ -8,11 +8,11 @@
 import UIKit
 
 class PizzabotViewController: UIViewController {
-    
-    @IBOutlet var inputTextField: UITextField!
-    
+
+    @IBOutlet private var inputTextField: UITextField!
+
     private var presenter: PizzabotViewPresenter!
-    
+
     let messageAlert: UIAlertController = {
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         let closeAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -24,24 +24,25 @@ class PizzabotViewController: UIViewController {
         configure(presenter: PizzabotPresenter(view: self))
         super.viewDidLoad()
     }
-    
-    @IBAction func startRouting(_ sender: Any) {
-        let inputString = inputTextField.text!
+
+    @IBAction private func startRouting(_ sender: Any) {
+        guard let inputString = inputTextField.text else { return }
+//        let inputString = inputTextField.text!
         presenter.startRouting(inputString: inputString)
     }
 }
 
-//MARK: - View contract
+// MARK: - View contract
 extension PizzabotViewController: PizzabotView {
-    
+
     func configure(presenter: PizzabotViewPresenter) {
         self.presenter = presenter
     }
-    
+
     func showMessage(title: String, message: String) {
         messageAlert.title = title
         messageAlert.message = message
         show(messageAlert, sender: self)
     }
-    
+
 }

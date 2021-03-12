@@ -8,9 +8,9 @@
 import Foundation
 
 protocol RouteBuilder {
-    
+
     var startPoint: Point { get }
-    
+
     /// Building path from start point to destination points
     /// - Parameter destinationPoints: array of destination points
     func buildPath(destinationPoints: [Point]) -> String

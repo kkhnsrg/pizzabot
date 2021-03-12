@@ -28,7 +28,7 @@
 		A5B858A125FA1BD4007FAC6F /* PizzabotContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858A025FA1BD4007FAC6F /* PizzabotContract.swift */; };
 		A5B858A825FA1CCC007FAC6F /* PizzabotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858A725FA1CCC007FAC6F /* PizzabotPresenter.swift */; };
 		A5B858BE25FA26CC007FAC6F /* XYRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858BD25FA26CC007FAC6F /* XYRouteBuilder.swift */; };
-		A5B858C325FA2A3F007FAC6F /* InputFormatValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858C225FA2A3F007FAC6F /* InputFormatValidator.swift */; };
+		A5B858C325FA2A3F007FAC6F /* InputStringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858C225FA2A3F007FAC6F /* InputStringValidator.swift */; };
 		A5B858CB25FA2B5E007FAC6F /* InputStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858CA25FA2B5E007FAC6F /* InputStringParser.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +77,7 @@
 		A5B858A025FA1BD4007FAC6F /* PizzabotContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzabotContract.swift; sourceTree = "<group>"; };
 		A5B858A725FA1CCC007FAC6F /* PizzabotPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzabotPresenter.swift; sourceTree = "<group>"; };
 		A5B858BD25FA26CC007FAC6F /* XYRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYRouteBuilder.swift; sourceTree = "<group>"; };
-		A5B858C225FA2A3F007FAC6F /* InputFormatValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormatValidator.swift; sourceTree = "<group>"; };
+		A5B858C225FA2A3F007FAC6F /* InputStringValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStringValidator.swift; sourceTree = "<group>"; };
 		A5B858CA25FA2B5E007FAC6F /* InputStringParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStringParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				A5B8586325F907F0007FAC6F /* Validator.swift */,
-				A5B858C225FA2A3F007FAC6F /* InputFormatValidator.swift */,
+				A5B858C225FA2A3F007FAC6F /* InputStringValidator.swift */,
 				A5B8587C25F90E80007FAC6F /* ValidationError.swift */,
 			);
 			path = Validation;
@@ -231,6 +231,7 @@
 				A5B8582925F9019B007FAC6F /* Sources */,
 				A5B8582A25F9019B007FAC6F /* Frameworks */,
 				A5B8582B25F9019B007FAC6F /* Resources */,
+				A5B858D825FA6A3A007FAC6F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -346,6 +347,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A5B858D825FA6A3A007FAC6F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5B8582925F9019B007FAC6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -363,7 +384,7 @@
 				A5B8583125F9019B007FAC6F /* AppDelegate.swift in Sources */,
 				A5B8583325F9019B007FAC6F /* SceneDelegate.swift in Sources */,
 				A5B858BE25FA26CC007FAC6F /* XYRouteBuilder.swift in Sources */,
-				A5B858C325FA2A3F007FAC6F /* InputFormatValidator.swift in Sources */,
+				A5B858C325FA2A3F007FAC6F /* InputStringValidator.swift in Sources */,
 				A5B8587825F90E3C007FAC6F /* BotCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

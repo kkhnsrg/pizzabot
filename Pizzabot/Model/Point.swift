@@ -8,5 +8,5 @@
 import Foundation
 
 struct Point: Hashable {
-    let x,y: Int
+    let x, y: Int
 }

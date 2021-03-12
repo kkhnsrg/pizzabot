@@ -7,15 +7,13 @@
 
 import Foundation
 
-import Foundation
-
-//MARK: - View contract
+// MARK: - View contract
 protocol PizzabotView: AnyObject {
-    
+
     /// View configuration method for setting up
     /// - Parameter presenter: presenter for current view
     func configure(presenter: PizzabotViewPresenter)
-    
+
     /// Showing message method
     /// - Parameters:
     ///   - title: title of the message
@@ -23,11 +21,11 @@ protocol PizzabotView: AnyObject {
     func showMessage(title: String, message: String)
 }
 
-//MARK: - Presenter contract
+// MARK: - Presenter contract
 protocol PizzabotViewPresenter {
-    
+
     init(view: PizzabotView)
-    
+
     /// Start build route path process
     /// - Parameter inputString: entered string
     func startRouting(inputString: String)

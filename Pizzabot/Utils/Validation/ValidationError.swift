@@ -7,13 +7,12 @@
 
 import Foundation
 
-
 /// Possible validation errors
 enum ValidationError: Error {
     case empty
     case invalidInput
     case pointOutOfBounds
-    
+
     var description: String {
         switch self {
         case .empty:
