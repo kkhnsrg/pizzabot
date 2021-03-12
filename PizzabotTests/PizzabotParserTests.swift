@@ -21,7 +21,7 @@ class PizzabotParserTests: XCTestCase {
     }
 
     func testPositiveChallengeParsing() throws {
-        let actualResult = parser.parse(inputString: PizzabotTestsDataSource.ChallengeData.inputString)
+        let actualResult = try parser.parse(inputString: PizzabotTestsDataSource.ChallengeData.inputString)
 
         let expectedGridSizePoint = PizzabotTestsDataSource.ChallengeData.gridSizePoint
         let expectedDestinationPoints = PizzabotTestsDataSource.ChallengeData.destinationPoints
@@ -31,13 +31,17 @@ class PizzabotParserTests: XCTestCase {
     }
 
     func testPositiveExampleParsing() throws {
-        let actualResult = parser.parse(inputString: PizzabotTestsDataSource.ExampleData.inputString)
+        let actualResult = try parser.parse(inputString: PizzabotTestsDataSource.ExampleData.inputString)
 
         let expectedGridSizePoint = PizzabotTestsDataSource.ExampleData.gridSizePoint
         let expectedDestinationPoints = PizzabotTestsDataSource.ExampleData.destinationPoints
 
         XCTAssertEqual(actualResult.gridSizePoint, expectedGridSizePoint)
         XCTAssertEqual(actualResult.destinationPoints, expectedDestinationPoints)
+    }
+
+    func testNegativeExampleParsing() throws {
+        XCTAssertThrowsError(try parser.parse(inputString: PizzabotTestsDataSource.ExampleData.invalidInputString))
     }
 
 }

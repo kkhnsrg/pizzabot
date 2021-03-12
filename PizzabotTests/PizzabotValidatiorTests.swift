@@ -39,7 +39,7 @@ class PizzabotValidatiorTests: XCTestCase {
     func testNegativeOutOfBoundsValidation() throws {
         XCTAssertThrowsError(try validator?.validateBounds(
                                 gridSizePoint: PizzabotTestsDataSource.ExampleData.gridSizePoint,
-                                destinationPoints: PizzabotTestsDataSource.ExampleData.invalidDestinationPoints))
+                                destinationPoints: PizzabotTestsDataSource.ExampleData.outOfBoundsDestinationPoints))
     }
 
 }

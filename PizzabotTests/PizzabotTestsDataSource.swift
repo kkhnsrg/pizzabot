@@ -37,6 +37,6 @@ struct PizzabotTestsDataSource {
 
         static let gridSizePoint = Point(x: 5, y: 5)
         static let destinationPoints = [Point(x: 1, y: 3), Point(x: 4, y: 4)]
-        static let invalidDestinationPoints = [Point(x: 21, y: 3), Point(x: 4, y: 20)]
+        static let outOfBoundsDestinationPoints = [Point(x: Int.max, y: 3), Point(x: 4, y: 20)]
     }
 }

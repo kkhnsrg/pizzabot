@@ -31,7 +31,7 @@ class PizzabotTests: XCTestCase {
         let inputString = PizzabotTestsDataSource.ChallengeData.inputString
 
         try validator.validateStringFormat(inputString: inputString)
-        let result = parser.parse(inputString: inputString)
+        let result = try parser.parse(inputString: inputString)
         try validator.validateBounds(gridSizePoint: result.gridSizePoint, destinationPoints: result.destinationPoints)
         let output = router.buildPath(destinationPoints: result.destinationPoints)
 
@@ -43,7 +43,7 @@ class PizzabotTests: XCTestCase {
         let inputString = PizzabotTestsDataSource.ExampleData.inputString
 
         try validator.validateStringFormat(inputString: inputString)
-        let result = parser.parse(inputString: inputString)
+        let result = try parser.parse(inputString: inputString)
         try validator.validateBounds(gridSizePoint: result.gridSizePoint, destinationPoints: result.destinationPoints)
         let output = router.buildPath(destinationPoints: result.destinationPoints)
 

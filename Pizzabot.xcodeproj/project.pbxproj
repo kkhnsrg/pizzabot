@@ -25,11 +25,11 @@
 		A5B8589225F9FDAC007FAC6F /* PizzabotTestsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8589125F9FDAC007FAC6F /* PizzabotTestsDataSource.swift */; };
 		A5B8589725FA0FE4007FAC6F /* PizzabotParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8589625FA0FE4007FAC6F /* PizzabotParserTests.swift */; };
 		A5B8589C25FA1449007FAC6F /* PizzabotRouteBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8589B25FA1449007FAC6F /* PizzabotRouteBuilderTests.swift */; };
-		A5B858A125FA1BD4007FAC6F /* PizzabotContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858A025FA1BD4007FAC6F /* PizzabotContract.swift */; };
 		A5B858A825FA1CCC007FAC6F /* PizzabotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858A725FA1CCC007FAC6F /* PizzabotPresenter.swift */; };
 		A5B858BE25FA26CC007FAC6F /* XYRouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858BD25FA26CC007FAC6F /* XYRouteBuilder.swift */; };
 		A5B858C325FA2A3F007FAC6F /* InputStringValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858C225FA2A3F007FAC6F /* InputStringValidator.swift */; };
 		A5B858CB25FA2B5E007FAC6F /* InputStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858CA25FA2B5E007FAC6F /* InputStringParser.swift */; };
+		A5B858EB25FB8824007FAC6F /* ParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B858EA25FB8824007FAC6F /* ParsingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,11 +74,11 @@
 		A5B8589125F9FDAC007FAC6F /* PizzabotTestsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzabotTestsDataSource.swift; sourceTree = "<group>"; };
 		A5B8589625FA0FE4007FAC6F /* PizzabotParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzabotParserTests.swift; sourceTree = "<group>"; };
 		A5B8589B25FA1449007FAC6F /* PizzabotRouteBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzabotRouteBuilderTests.swift; sourceTree = "<group>"; };
-		A5B858A025FA1BD4007FAC6F /* PizzabotContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzabotContract.swift; sourceTree = "<group>"; };
 		A5B858A725FA1CCC007FAC6F /* PizzabotPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzabotPresenter.swift; sourceTree = "<group>"; };
 		A5B858BD25FA26CC007FAC6F /* XYRouteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYRouteBuilder.swift; sourceTree = "<group>"; };
 		A5B858C225FA2A3F007FAC6F /* InputStringValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStringValidator.swift; sourceTree = "<group>"; };
 		A5B858CA25FA2B5E007FAC6F /* InputStringParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputStringParser.swift; sourceTree = "<group>"; };
+		A5B858EA25FB8824007FAC6F /* ParsingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +165,6 @@
 		A5B858A525FA1C83007FAC6F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A5B858A025FA1BD4007FAC6F /* PizzabotContract.swift */,
 				A5B8583425F9019B007FAC6F /* PizzabotViewController.swift */,
 				A5B858A725FA1CCC007FAC6F /* PizzabotPresenter.swift */,
 				A5B8583625F9019B007FAC6F /* Main.storyboard */,
@@ -189,6 +188,7 @@
 			children = (
 				A5B8586825F907FC007FAC6F /* Parser.swift */,
 				A5B858CA25FA2B5E007FAC6F /* InputStringParser.swift */,
+				A5B858EA25FB8824007FAC6F /* ParsingError.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -376,8 +376,8 @@
 				A5B858CB25FA2B5E007FAC6F /* InputStringParser.swift in Sources */,
 				A5B8586E25F90845007FAC6F /* RouteBuilder.swift in Sources */,
 				A5B8583525F9019B007FAC6F /* PizzabotViewController.swift in Sources */,
+				A5B858EB25FB8824007FAC6F /* ParsingError.swift in Sources */,
 				A5B8586925F907FC007FAC6F /* Parser.swift in Sources */,
-				A5B858A125FA1BD4007FAC6F /* PizzabotContract.swift in Sources */,
 				A5B858A825FA1CCC007FAC6F /* PizzabotPresenter.swift in Sources */,
 				A5B8587325F90E15007FAC6F /* Point.swift in Sources */,
 				A5B8587D25F90E80007FAC6F /* ValidationError.swift in Sources */,

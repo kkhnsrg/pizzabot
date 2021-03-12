@@ -7,11 +7,25 @@
 
 import UIKit
 
+// MARK: - View protocol
+protocol PizzabotViewProtocol: AnyObject {
+
+    /// View configuration method for setting up
+    /// - Parameter presenter: presenter for current view
+    func configure(presenter: PizzabotPresenterProtocol)
+
+    /// Showing message method
+    /// - Parameters:
+    ///   - title: title of the message
+    ///   - message: message text
+    func showMessage(title: String, message: String)
+}
+
 class PizzabotViewController: UIViewController {
 
     @IBOutlet private var inputTextField: UITextField!
 
-    private var presenter: PizzabotViewPresenter!
+    private var presenter: PizzabotPresenterProtocol!
 
     let messageAlert: UIAlertController = {
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
@@ -26,16 +40,15 @@ class PizzabotViewController: UIViewController {
     }
 
     @IBAction private func startRouting(_ sender: Any) {
-        guard let inputString = inputTextField.text else { return }
-//        let inputString = inputTextField.text!
+        let inputString = inputTextField.text ?? ""
         presenter.startRouting(inputString: inputString)
     }
 }
 
 // MARK: - View contract
-extension PizzabotViewController: PizzabotView {
+extension PizzabotViewController: PizzabotViewProtocol {
 
-    func configure(presenter: PizzabotViewPresenter) {
+    func configure(presenter: PizzabotPresenterProtocol) {
         self.presenter = presenter
     }
 
